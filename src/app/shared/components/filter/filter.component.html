@@ -1,0 +1,86 @@
+<div class="content">
+  <mat-expansion-panel class="panel" expanded>
+    <mat-expansion-panel-header [@.disabled]="true">
+      <mat-panel-title>
+        {{this.appConfig.LANG.filter.title}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-expansion-panel class="item">
+      <mat-expansion-panel-header [@.disabled]="true">
+        <mat-panel-title>
+          <mat-icon class="mat-list-icon fas fa-search" aria-hidden="true">
+          </mat-icon>
+          {{this.appConfig.LANG.filter.searchName}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="form">
+        <mat-form-field>
+          <input matInput #filter id="filter" color="accent"
+                 placeholder="{{this.appConfig.LANG.filter.searchHotel}}">
+          <!-- <input matInput (keyup)="filterData($event.target.value)"
+          placeholder="{{appConfig.LANG.input.search}}" #filter id="filter"> -->
+        </mat-form-field>
+        <button mat-raised-button color="primary">Buscar</button>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="item">
+      <mat-expansion-panel-header [@.disabled]="true">
+        <mat-panel-title>
+          <mat-icon class="mat-list-icon fas fa-star" aria-hidden="true">
+          </mat-icon>
+          {{this.appConfig.LANG.filter.searchStar}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="form">
+        <div class="stars" #stars>
+          <div class="item-star">
+            <mat-checkbox>
+              {{this.appConfig.LANG.filter.allStar}}
+            </mat-checkbox>
+          </div>
+
+          <div class="item-star">
+            <mat-checkbox>
+              <mat-icon *ngFor="let i of [1,2,3,4,5]" class=" mat-list-icon fas fa-star"
+                        aria-hidden="true">
+              </mat-icon>
+            </mat-checkbox>
+          </div>
+
+          <div class="item-star">
+            <mat-checkbox>
+              <mat-icon *ngFor="let i of [1,2,3,4]" class=" mat-list-icon fas fa-star"
+                        aria-hidden="true">
+              </mat-icon>
+            </mat-checkbox>
+          </div>
+
+          <div class="item-star">
+            <mat-checkbox>
+              <mat-icon *ngFor="let i of [1,2,3]" class=" mat-list-icon fas fa-star"
+                        aria-hidden="true">
+              </mat-icon>
+            </mat-checkbox>
+          </div>
+
+          <div class="item-star">
+            <mat-checkbox>
+              <mat-icon *ngFor="let i of [1,2]" class=" mat-list-icon fas fa-star"
+                        aria-hidden="true">
+              </mat-icon>
+            </mat-checkbox>
+          </div>
+
+          <div class="item-star">
+            <mat-checkbox>
+              <mat-icon *ngFor="let i of [1]" class=" mat-list-icon fas fa-star" aria-hidden="true">
+              </mat-icon>
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-expansion-panel>
+</div>

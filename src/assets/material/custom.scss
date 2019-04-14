@@ -1,0 +1,156 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: $colorBackground;
+}
+
+button {
+  outline: none !important;
+}
+
+.row {
+  margin: 0;
+}
+
+.toolbar {
+
+  .logo {
+    background-image: url('../images/logo.svg');
+    width: 100%;
+    height: 60%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.sidenav {
+  padding: 0;
+}
+
+@media screen and (min-width:768px) {
+  .toolbar {
+    margin-bottom: 15px;
+  }
+
+  .sidenav {
+    padding: 0 15px;
+  }
+}
+
+app-filter {
+  .content {
+    .mat-expansion-panel {
+      border-radius: 0;
+      box-shadow: 0 0 2px 1px $colorDisabled;
+
+      .mat-expansion-panel-header {
+        height: 40px !important;
+        padding: 0 15px;
+        border-bottom: 1px solid $colorDisabled;
+      }
+
+      .mat-expansion-indicator {
+        margin-top: -5px;
+      }
+
+      &.mat-expanded {
+        .mat-expansion-indicator {
+          margin-top: 5px;
+        }
+
+        .item {
+          .mat-expansion-indicator {
+            margin-top: -5px;
+          }
+
+          &.mat-expanded {
+            .mat-expansion-indicator {
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .panel {
+      .mat-expansion-panel-header-title {
+        font-weight: bold;
+        color: $colorAccent;
+        flex-grow: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .mat-expansion-panel-body {
+        padding: 0;
+      }
+
+      .item {
+        box-shadow: 0 0 0;
+        border-bottom: 1px solid $colorDisabled;
+
+        &:last-child {
+          border-bottom: 0 !important;
+        }
+
+        .mat-expansion-panel-header {
+          border-bottom: 0 !important;
+
+          .mat-expansion-panel-header-title {
+            color: $colorAccent !important;
+            line-height: 15px;
+            white-space: nowrap;
+            margin: 0;
+
+            .mat-icon {
+              width: 24px;
+              height: 15px;
+            }
+          }
+        }
+
+        .mat-expansion-panel-body {
+          padding: 0 15px 10px 15px;
+        }
+      }
+    }
+
+    .form {
+      text-align: center;
+
+      .mat-form-field {
+        width: 100%;
+      }
+
+      .stars {
+        .item-star {
+          height: 25px;
+          line-height: 25px;
+          font-size: 15px;
+          text-align: left;
+          overflow: hidden;
+
+          .mat-checkbox-inner-container-no-side-margin {
+            margin-right: 8px;
+          }
+
+          .mat-icon {
+            width: 20px;
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .panel {
+      .mat-expansion-panel-header-title {
+        color: $colorNone !important;
+        margin: 0 !important;
+      }
+    }
+  }
+}

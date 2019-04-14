@@ -9,4 +9,5 @@ export class AppConfig {
   readonly URL: string = environment.apiUrl;
   readonly LANG = LANGUAGE_CONFIG;
   readonly MENU: Array<Menu> = MENU_CONFIG;
+  readonly DESTOK: number = 768;
 }

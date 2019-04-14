@@ -17,7 +17,8 @@
       "@modules/*": ["app/modules/*"],
       "@shared/*": ["app/shared/*"],
       "@config/*": ["app/config/*"],
-      "@environments/*": ["environments/*"]
+      "@environments/*": ["environments/*"],
+      "@assets": ["assets/*"]
     }
   }
 }
