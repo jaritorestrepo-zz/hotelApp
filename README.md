@@ -1,27 +1,34 @@
-# HotelApp
+<h1>HotelApp</h1>
+Aplicación desarrollada para prueba tecnica de Al Mundo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+<h2>Requisitos</h2>
+-NodeJS
+-npm
+-Angular 6
+-Hotel Api
 
-## Development server
+<h2>¿Cómo utilizar la aplicación?</h2>
+**1. Descargar o clonar el reposotorio de Github
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+git clone https://github.com/jaritorestrepo/hotelApp
+```
 
-## Code scaffolding
+**2. Instalar las librerias necesarias encontradas en el package.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install
+```
 
-## Build
+**3. Ejecutar la aplicación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+ng serve
+```
 
-## Running unit tests
+<h3>Si se desea generar el proyecto listo para paso a producción</h3>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+ng build --configuration=production
+```
