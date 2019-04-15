@@ -40,9 +40,9 @@
               </mat-checkbox>
             </div>
 
-            <div class="item-star" *ngFor="let star of generalsService.rangeDesc(1,5)">
+            <div class="item-star" *ngFor="let star of generalsService.rangeDesc(1,5,1)">
               <mat-checkbox (change)="searchStar(star, $event)" [checked]="starList[star]">
-                <mat-icon *ngFor="let i of generalsService.rangeAsc(1,star)"
+                <mat-icon *ngFor="let i of generalsService.rangeAsc(1,star,1)"
                           class=" mat-list-icon fas fa-star" aria-hidden="true">
                 </mat-icon>
               </mat-checkbox>

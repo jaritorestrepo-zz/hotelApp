@@ -26,9 +26,12 @@ npm install
 ng serve
 ```
 
-### Si se desea generar el proyecto listo para paso a producción
-
+**Si se desea generar el proyecto listo para paso a producción**
 
 ```bash
 ng build --configuration=production
 ```
+
+###Para tener en cuenta
+* La aplicación se ejecuta por defecto a traves del puerto 4200
+* El servicio de 'Hotel Api' debe estar ejecutandose a través del puerto 4000
