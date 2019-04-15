@@ -2,10 +2,10 @@
 Aplicación desarrollada para prueba tecnica de Al Mundo
 
 ## Requisitos
-*NodeJS
-*npm
-*Angular 6
-*Hotel Api
+* NodeJS
+* npm
+* Angular 6
+* Hotel Api
 
 ## ¿Cómo utilizar la aplicación?</h2>
 **1. Descargar o clonar el reposotorio de Github**
