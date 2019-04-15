@@ -1,13 +1,13 @@
-<h1>HotelApp</h1>
+# HotelApp
 Aplicación desarrollada para prueba tecnica de Al Mundo
 
-<h2>Requisitos</h2>
+## Requisitos
 *NodeJS
 *npm
 *Angular 6
 *Hotel Api
 
-<h2>¿Cómo utilizar la aplicación?</h2>
+## ¿Cómo utilizar la aplicación?</h2>
 **1. Descargar o clonar el reposotorio de Github**
 
 ```bash
@@ -26,7 +26,7 @@ npm install
 ng serve
 ```
 
-<h3>Si se desea generar el proyecto listo para paso a producción</h3>
+### Si se desea generar el proyecto listo para paso a producción
 
 
 ```bash
