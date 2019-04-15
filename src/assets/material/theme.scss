@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+@import './blue-palette.scss';
+@import './blue-light-palette.scss';
+@include mat-core();
+$customPrimary: mat-palette($mat-blue);
+$customAccent: mat-palette($mat-blue-light);
+$customWarn: mat-palette($mat-blue);
+$customTheme: mat-light-theme($customPrimary,
+$customAccent,
+$customWarn);
+@include angular-material-theme($customTheme);
+$colorDefault: #073c7f;
+$colorSecond: #e16800;
+$colorAccent: #0679b3;
+$colorYellow: #ffff00;
+$colorBackground: #f4f4f4;
+// $colorBackground: blue;
+$colorGood: #16c98d;
+$colorBad: #fa5e5b;
+$colorNone: #444444;
+$colorDisabled: #ddddde;
+$colorLight: #fff;
+$colorDark: #000;
+$colorHeaderTable: #d1d3d4;
+$colorRowTableHover: #e2e1e1;
+$colorBorderTableLight: #e0e0e0;
+$colorBorderTableDark: #a5a1a1;
+@import './custom.scss';
