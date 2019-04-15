@@ -5,6 +5,12 @@ export const LANGUAGE_CONFIG = {
     searchName: 'Nombre de hotel',
     searchHotel: 'Ingrese el nombre del hotel',
     searchStar: 'Estrellas',
-    allStar: 'Todas las estrellas'
+    allStar: 'Todas las estrellas',
+    search: 'Buscar'
+  },
+  hotels: {
+    priceNight: 'Precio por noche por habitación',
+    price: 'ARS',
+    show: 'Ver hotel'
   }
 };

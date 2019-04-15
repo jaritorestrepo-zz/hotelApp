@@ -6,12 +6,12 @@ import { AppComponent } from '@app/app.component';
 import { HotelsService } from '@app/core/services/hotels.services';
 import { MaterialAppModule } from '@app/material.module';
 import { AppConfig } from '@config/app.config';
+import { GeneralsService } from '@core/services/generals.service';
 import { HotelsComponent } from '@modules/hotels/hotels.component';
-import { FilterComponent } from '@shared/components/filter/filter.component';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, FilterComponent, HotelsComponent],
+  declarations: [AppComponent, HotelsComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -19,7 +19,7 @@ import { SharedModule } from '@shared/shared.module';
     MaterialAppModule,
     SharedModule
   ],
-  providers: [AppConfig, HotelsService],
+  providers: [AppConfig, GeneralsService, HotelsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

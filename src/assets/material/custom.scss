@@ -39,8 +39,10 @@ button {
   }
 }
 
-app-filter {
-  .content {
+app-hotels {
+  .filter {
+    padding: 0;
+
     .mat-expansion-panel {
       border-radius: 0;
       box-shadow: 0 0 2px 1px $colorDisabled;
@@ -53,11 +55,13 @@ app-filter {
 
       .mat-expansion-indicator {
         margin-top: -5px;
+        padding-left: 5px;
       }
 
       &.mat-expanded {
         .mat-expansion-indicator {
           margin-top: 5px;
+          padding-right: 5px;
         }
 
         .item {
@@ -137,6 +141,7 @@ app-filter {
           }
 
           .mat-icon {
+            color: $colorYellow;
             width: 20px;
             height: 15px;
           }
@@ -146,10 +151,107 @@ app-filter {
   }
 
   @media screen and (min-width: 768px) {
-    .panel {
-      .mat-expansion-panel-header-title {
-        color: $colorNone !important;
-        margin: 0 !important;
+    .filter {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .panel {
+        .mat-expansion-panel-header-title {
+          color: $colorNone !important;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+
+  .hotels {
+    padding: 15px;
+
+    .item {
+      padding: 15px 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 2px 1px $colorDisabled;
+
+      .image {
+        text-align: center;
+        height: 250px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .description {
+        padding-top: 5px;
+        padding-bottom: 15px;
+
+        .row {
+          padding: 2.5px 0;
+        }
+
+        .title {
+          font-weight: bold;
+          color: $colorAccent;
+        }
+
+        .star {
+          color: $colorYellow;
+        }
+
+        .service {
+          img {
+            height: 20px;
+            padding-right: 6px;
+          }
+        }
+      }
+
+      .value {
+        border-top: 1px dashed $colorBorderTableDark;
+        padding-top: 15px;
+
+        .row {
+          text-align: center;
+          display: inherit;
+        }
+
+        .subtitle {
+          font-size: 14px;
+          color: $colorBorderTableDark;
+        }
+
+        .price {
+          font-size: 30px;
+          font-weight: bold;
+          color: $colorSecond;
+          line-height: 30px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .hotels{
+      padding: 0 15px !important;
+    }
+  }
+
+  @media screen and (min-width: 575px) {
+    .item {
+
+      .image {
+        height: 200px !important;
+      }
+
+      .value {
+        border-top: 0 !important;
+        border-left: 1px dashed $colorBorderTableDark;
+        padding-top: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ;
       }
     }
   }

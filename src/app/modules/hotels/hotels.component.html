@@ -1,40 +1,89 @@
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
-<p>sfkjdsfkjds</p>
+<div class="content row">
+  <div class="filter col-md-3">
+    <mat-expansion-panel class="panel" expanded>
+      <mat-expansion-panel-header [@.disabled]="true">
+        <mat-panel-title>
+          {{this.appConfig.LANG.filter.title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-expansion-panel class="item">
+        <mat-expansion-panel-header [@.disabled]="true">
+          <mat-panel-title>
+            <mat-icon class="mat-list-icon fas fa-search" aria-hidden="true">
+            </mat-icon>
+            {{this.appConfig.LANG.filter.searchName}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form">
+          <mat-form-field>
+            <input matInput #filter id="filter" color="accent"
+                   placeholder="{{this.appConfig.LANG.filter.searchHotel}}"
+                   (keyup)="searchName($event.target.value)">
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="item">
+        <mat-expansion-panel-header [@.disabled]="true">
+          <mat-panel-title>
+            <mat-icon class="mat-list-icon fas fa-star" aria-hidden="true">
+            </mat-icon>
+            {{this.appConfig.LANG.filter.searchStar}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form">
+          <div class="stars" #stars>
+            <div class="item-star">
+              <mat-checkbox (change)="searchStar(0, $event)" [checked]="starList[0]">
+                {{this.appConfig.LANG.filter.allStar}}
+              </mat-checkbox>
+            </div>
+
+            <div class="item-star" *ngFor="let star of generalsService.rangeDesc(1,5)">
+              <mat-checkbox (change)="searchStar(star, $event)" [checked]="starList[star]">
+                <mat-icon *ngFor="let i of generalsService.rangeAsc(1,star)"
+                          class=" mat-list-icon fas fa-star" aria-hidden="true">
+                </mat-icon>
+              </mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-expansion-panel>
+  </div>
+  <div class="hotels col-md-9">
+    <div class="loading" *ngIf="loading">Loading</div>
+    <div class="data" *ngIf="!loading">
+      <div class="no-elements" *ngIf="hotelsFilter.length == 0">
+        No hay elementos a mostrar
+      </div>
+      <div class="row item" *ngFor="let hotel of hotelsFilter">
+        <div class="col-sm-3 image"
+             [ngStyle]="{'background-image': 'url(' + assets + 'hotels/' + hotel.image + ')'}">
+        </div>
+        <div class="col-sm-6 description">
+          <div class="row title">{{hotel.name}}</div>
+          <div class="row star">
+            <mat-icon *ngFor="let i of generalsService.rangeAsc(1,hotel.stars)"
+                      class=" mat-list-icon fas fa-star" aria-hidden="true">
+            </mat-icon>
+          </div>
+          <div class="row service">
+            <img *ngFor="let service of hotel.amenities" src="{{assets}}services/{{service}}.svg"
+                 alt="servie">
+          </div>
+        </div>
+        <div class="col-sm-3 value">
+          <div>
+            <div class="row subtitle">{{this.appConfig.LANG.hotels.priceNight}}</div>
+            <div class="row price">{{this.appConfig.LANG.hotels.price}} {{hotel.price}}</div>
+            <div class="row button">
+              <button mat-raised-button color="primary">{{this.appConfig.LANG.hotels.show}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
